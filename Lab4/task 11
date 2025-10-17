@@ -2,26 +2,42 @@
 using namespace std;
 
 int main() {
+    int z = 0;
+    int x = 0;
     long long a;
     cin >> a;
-    long long arr[a];
+    long long arrA[a];
     for (int i = 0;i < a;i++) {
-        cin >> arr[i];
+        cin >> arrA[i];
     }
-    for (long long v = 0;v < a;v++) {
-        for (long long i = v + 1; i < a; ) {
-            if (arr[v] == arr[i]) {
-                for (long long k = i; k < a - 1; k++) {
-                    arr[k] = arr[k + 1];
-                }
-                a--;
-            } else {
-                i++;
-            }
+    long long b;
+    cin >> b;
+    long long arrB[b];
+    for (int i = 0;i < b;i++) {
+        cin >> arrB[i];
+    }
+    while (a > z && b > x) {
+        if(arrA[z] > arrB[x]) {
+            cout << arrB[x] << " ";
+            x++;
+        }
+        else if(arrA[z] < arrB[x]) {
+            cout << arrA[z] << " ";
+            z++;
+        }
+        else if (arrA[z] == arrB[x]) {
+            cout << arrA[z] << " " << arrB[x] << " ";
+            z++;
+            x++;
         }
     }
-    for (long long i = 0;i < a; i ++) {
-        cout << arr[i]<< " ";
-    }
+    while (a > z) {
+        cout << arrA[z] << " ";
+    z++;
+}
+    while (b > x) {
+        cout << arrB[x] << " ";
+    x++;
+}
     return 0;
 }
