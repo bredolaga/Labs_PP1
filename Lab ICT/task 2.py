@@ -17,14 +17,13 @@ while True:
             print("'{item}' has been added")
         else:
             print("Item can't be empty")
-    if choice == "2":
+    elif choice == "2":
         if not ToDoList:
             print ("it's empty")
         else:
             for i, task in enumerate(ToDoList, start=1):
                 print(f"{i}. {task}")
-
-    if choice == "3":
+    elif choice == "3":
         if not ToDoList:
             print("The list is empty.")
         else:
@@ -37,6 +36,7 @@ while True:
                     print("Invalid number. Try again.")
             except ValueError:
                 print("Please enter a valid number.")
-
-    if choice == "q":
+    elif choice == "q":
         break
+    else:
+        print("Invalid input! Please enter 1, 2, 3, or q.")
